@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dio">
+    <meta name="destription" content="blog pessoal">
+
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+    <!--icones-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- fonte-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- css-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>dio</title>
+
+</head>
+
+
+<body>
+
+    <head>
+        <h1>
+            <a href="../index.html">pagina princiapal</a> <!--voltar pra pagina principal-->
+
+            <div class="row">
+                <label>primeiro nome</label>
+                <input type="text" placeholder="primeiro nome" id="nome1">
+            </div>
+            <div class="six coluns">
+                <label>ultimo nome</label>
+                <br>
+                <input type="text" placeholder="ultimo nome" id="nome2">
+            </div>
+            <div class="row">
+                <div class="six value">
+                    <label>idade<span>*</span></label>
+                    <select id="idade" required>
+
+                        <option value="menor de 13">menor de 13 anos</option>
+                        <option value="13-17">13-17</option>
+                        <option value="18-24">18-24</optmion>
+                        <option value="25-30">25-30</option>
+                        <option value="30-40">30-40</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>email</label>
+                    <input type="email" placeholder="digite seu email" id="email">
+                </div>
+            </div>
+            <div>
+                <label>data<span>*</span></label>
+                <input type="date" id="data" required>
+            </div>
+        </h1>
+    </head>
+    <main>
+        <div id="resposta" onclick="adeus()">usuarios sem js verão isso</div>
+        <script type='text/javascript'>
+            document.getElementById('resposta').innerHTML = 'pipoca';
+        </script>
+
+
+    </main>
+
+    <!--fim do site-->
+
+    <footer>
+        <!--rodapé-->
+        <a href="#topo">voltar para o topo</a>
+    </footer>
+
+
+    <!-- javascript -->
+
+
+    <input id="inputUser" size="60" onKeyDown="enviarResposta()">
+
+    <button onClick="enviarresposta()">
+        enviar
+    </button>
+
+    <div id="resultado">
+        resultado:
+    </div>
+    <script type="text/javascript">
+        var floatErro = 0.06 + 0.01;
+        document.getElementById('resultado').innerHTML = 'voce digitou: ' + floatErro;
+
+        function eviarResposta() {
+            var IU = document.getElementById('inputUser').value;
+            document.getElementById('resultado').innerHTML = 'voce digitou: ' + IU;
+        }
+    </script>
+
+    <div id="resultado">
+        resultado:
+    </div>
+    <script type="text/javascript">
+        var umaPotencia = 1.23e+3;
+        document.getElementById('resultado').innerHTML = 'voce digitou: ' = umaPotencia;
+    </script>
+
+
+
+    <div id="resultado" onclick="escopofuncao()">cliqueaqui</div>
+    <script>
+        function escopofuncao() { // cria funcao
+            tambemgGlobal = 'Essa tambem é global';
+            var naoGlobal = 'essa é privada a escopofuncao';
+            subfuncao() //chamei a subfuncao
+
+            function subfuncao() { // crio uma subfuncao
+                alert(naoGlobal); // chamou a variavel não global, que é privada a escopo função
+                aindaGlobal = 'nao antecedida da palava chave var então é global'; //chamada pela getElementbyid
+                var ePrivada = ' essa é privada wa função Efuncao'; //privada a subfunção, não exibe
+            }
+
+            document.getElementById('resultado').innerHTML = aindaGlobal;
+            /*chama a subfuncao, criando
+                um "alert não global", esta sendo rodada dentro da função*/
+
+        }
+
+        document.getElementById('resultado').innerHTML = global; //chama a função global
+
+        document.getElementById('resultado').innerHTML = tambemgGlobal;
+        /*chama a função escopo, mas não funciona,
+         pois não chamei escopofuncao*/
+ 
+        escopofuncao();
+        alert(tambemgGlobal); //entra na funcao
+    </script>
+
+</body>
+
+</html>

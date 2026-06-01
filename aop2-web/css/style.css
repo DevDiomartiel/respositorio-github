@@ -1,0 +1,19 @@
+/*dioweb*/
+
+/*bootstrap*/
+
+
+/*css*/
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+
+header {
+  backdrop-filter: blur(40px);
+  background: rgba(255, 255, 255, .05);
+}
