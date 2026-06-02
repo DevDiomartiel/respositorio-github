@@ -2,339 +2,351 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Dio">
-    <meta name="destription" content="blog pessoal">
-
-    <!--bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta name="description" content="Musaico - Seu blog pessoal de música">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- Swiper.js CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <!--icones-->
+
+    <!-- Font Awesome Icones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- fonte-->
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- css-->
+   <!-- css-->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>dio</title>
-
+    <title>Musaico</title>
 </head>
 
-
 <body
-    class="bg-youtubeLightBg dark:bg-youtubeBg text-youtubeLightText dark:text-youtubeText transition-colors duration-300">
+    class="bg-youtubeLightBg dark:bg-youtubeBg text-youtubeLightText dark:text-youtubeText font-['Poppins'] transition-colors duration-300 min-h-screen flex flex-col">
 
-
-    <!-- Header -->
+    <!-- Header (Estilo YouTube Premium) -->
     <header
-        class="fixed w-full bg-white/50 dark:bg-gray-900/70 backdrop-blur-md shadow-md z-50 p-4 flex justify-between items-center">
-        <h1 class="text-xl font-bold">musaico</h1>
-        <button id="darkModeBtn" class="p-2 rounded">🌙</button>
+        class="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm z-50 px-6 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <!-- Botão de Menu com o ID correto e visível em todas as telas -->
+            <i id="menuBtn" class="fas fa-bars text-xl cursor-pointer hover:opacity-70"></i>
+            <h1 class="text-2xl font-black tracking-tighter text-youtubeRed flex items-center gap-2">
+                <i class="fas fa-mosaic"></i>musaico
+            </h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <button id="darkModeBtn"
+                class="p-2.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-lg"
+                title="Alternar tema">
+                🌙
+            </button>
+        </div>
     </header>
 
-
-    <!-- Sidebar -->
-
-
-
-    <aside
-        class="fixed top-16 left-0 w-60 bg-youtubeLightSidebar dark:bg-youtubeSidebar w-60 h-full p-4 hidden md:block ">
-        <nav class="flex flex-col space-y-3">
-            <a href="index.html" class="hover:text-youtubeRed dark:hover:text-youtubeRed">Home</a>
-            <a href="paginas/artistas.html" class="hover:text-youtubeRed dark:hover:text-youtubeRed">Artistas</a>
-            <a href="paginas/albuns.html" class="hover:text-youtubeRed dark:hover:text-youtubeRed">Álbuns</a>
+    <!-- Sidebar Lateral Fixa (Estilo Clássico do YouTube) com ID para o JS -->
+    <aside id="sidebar"
+        class="fixed top-[60px] left-0 w-64 h-[calc(60vh-60px)] bg-white dark:bg-youtubeSidebar border-r border-gray-200 dark:border-gray-800 p-4 hidden md:block overflow-y-auto transition-all duration-300 z-40">
+        <nav class="flex flex-col space-y-1">
+            <a href="index.html"
+                class="flex items-center gap-4 px-4 py-3 rounded-xl bg-gray-100 dark:bg-youtubeHover text-youtubeRed font-semibold">
+                <i class="fas fa-house text-lg"></i> Home
+            </a>
+            <a href="paginas/artistas.html"
+                class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-youtubeHover transition-colors">
+                <i class="fas fa-user text-lg"></i> Artistas
+            </a>
+            <a href="paginas/albuns.html"
+                class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-youtubeHover transition-colors">
+                <i class="fas fa-compact-disc text-lg"></i> Álbuns
+            </a>
             <a href="paginas/instrumentos.html"
-                class="hover:text-youtubeRed dark:hover:text-youtubeRed">Instrumentos</a>
-            <a href="paginas/generos.html" class="hover:text-youtubeRed dark:hover:text-youtubeRed">Gêneros</a>
-            <a href="paginas/contatos.html" class="hover:text-youtubeRed dark:hover:text-youtubeRed">Contatos</a>
+                class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-youtubeHover transition-colors">
+                <i class="fas fa-guitar text-lg"></i> Instrumentos
+            </a>
+            <a href="paginas/generos.html"
+                class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-youtubeHover transition-colors">
+                <i class="fas fa-music text-lg"></i> Gêneros
+            </a>
+            <hr class="my-4 border-gray-200 dark:border-gray-800">
+            <a href="paginas/contatos.html"
+                class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-youtubeHover transition-colors">
+                <i class="fas fa-envelope text-lg"></i> Contatos
+            </a>
         </nav>
     </aside>
-    </aside>
 
-    <!--fim da sidebar-->
+    <!-- Conteúdo Principal com ID e Margem responsiva inicial alinhada à Sidebar -->
+    <main id="mainContent"
+        class="flex-1 md:ml-64 pt-[100px] px-6 pb-12 max-w-7xl mx-auto w-full transition-all duration-300">
 
-
-
-
-    <!-- conteudo principal -->
-
-    <main class="md:ml-64 pt-36 px-4">
-        <!--navegar-->
-
-        <nav class="fade-in fixed top-20 left-0 md:left-60 w-full md:w-[calc(100%-15rem)] bg-youtubeLightSidebar dark:bg-youtubeSidebar shadow-md z-40">
-
-            <ul class="flex flex-wrap md:flex-nowrap justify-around md:justify-start md:space-x-2 p-2">
-
-                <li>
-                    <a href="index.html"
-                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-youtubeHover hover:text-youtubeRed transition-all duration-300">
-                        <i class="fas fa-house"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="login/login.html"
-                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-youtubeHover hover:text-youtubeRed transition-all duration-300">
-                        <i class="fas fa-user"></i>
-                        <span>Login</span>
-                    </a>
-                </li>
-
-
-
-                <li>
-                    <a href="paginas/albuns.html"
-                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-youtubeHover hover:text-youtubeRed transition-all duration-300">
-                        <i class="fas fa-compact-disc"></i>
-                        <span>Álbuns</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="paginas/instrumentos.html"
-                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-youtubeHover hover:text-youtubeRed transition-all duration-300">
-                        <i class="fas fa-guitar"></i>
-                        <span>Instrumentos</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="paginas/generos.html"
-                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-youtubeHover hover:text-youtubeRed transition-all duration-300">
-                        <i class="fas fa-music"></i>
-                        <span>Gêneros</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="paginas/contatos.html"
-                        class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-youtubeHover hover:text-youtubeRed transition-all duration-300">
-                        <i class="fas fa-envelope"></i>
-                        <span>Contato</span>
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-        <!--fim do navegar-->
-
-        <!-- seção -->
+        <!-- Banner de Destaque -->
         <section id="topo"
-            class="fade-in h-96 flex items-center justify-center bg-[url('../img/destaque1.jpg')] bg-cover bg-center rounded-lg shadow-lg">
-            <h2 class="text-4xl font-bold text-white bg-black/50 p-4 rounded">Explore o mundo da música</h2>
+            class="relative my-6 h-60 md:h-80 flex items-center justify-start bg-[url('img/destaque1.jpg')] bg-cover bg-center rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+            <div class="relative z-10 p-8 md:p-12 max-w-xl">
+                <h2 class="text-3xl md:text-5xl font-black text-white leading-tight mb-2">Explore o universo da música
+                </h2>
+                <p class="text-gray-200 hidden sm:block text-sm md:text-base">Descubra novos ritmos, álbuns históricos e
+                    os segredos por trás dos instrumentos mais famosos do mundo.</p>
+            </div>
         </section>
-        <!--fim seção -->
 
-        <!-- Swiper Destaques -->
-        <section class="fade-inmy-10">
-            <h3 class="text-2xl font-bold mb-4">Destaques</h3>
-            <div class="swiper mySwiper">
+        <!-- Seção Swiper Carousel (Estilo Feed do Twitter/Cards Grandes) -->
+        <section class="my-10">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <i class="fas fa-fire text-youtubeRed"></i> Em Alta
+            </h3>
+            <div class="swiper mySwiper overflow-hidden rounded-2xl">
                 <div class="swiper-wrapper">
-
-                    <div class="swiper-slide"><a href="paginas/peripheryalbum.html"><img src="img/periphery ablum.jpg"
-                                alt="Instrumentos" class="rounded-lg shadow-lg">
-                            <p class="font-bold text-white  text-center">novo album do periphery</p>
-                        </a></div>
-                    <div class="swiper-slide"><a href="paginas/artistas.html"><img src="img/artistas.jpg" alt="Artistas"
-                                class="rounded-lg shadow-lg">
-                            <p class="font-bold text-white  text-center">artista</p>
-                        </a></div>
-                    <div class="swiper-slide"><a href="paginas/albuns.html"><img src="img/melhores-todos2.jpg"
-                                alt="Álbuns" class="rounded-lg shadow-lg">
-                            <p class="font-bold text-white  text-center">albuns</p>
-                        </a></div>
-                    <div class="swiper-slide"><a href="paginas/instrumentos.hhtml"><img src="img/instrumentos.jpg"
-                                alt="Instrumentos" class="rounded-lg shadow-lg">
-                            <p class="font-bold text-white  text-center">instrumentos</p>
-                        </a></div>
+                    <div class="swiper-slide relative aspect-video bg-gray-800">
+                        <a href="paginas/artistas.html">
+                            <img src="img/artistas.jpg" alt="Artistas"
+                                class="w-full h-full object-cover opacity-80 hover:scale-105 transition duration-500">
+                            <div
+                                class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/90 to-transparent text-center">
+                                <span class="font-bold text-white text-lg tracking-wide uppercase">Artistas de
+                                    Sucesso</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide relative aspect-video bg-gray-800">
+                        <a href="paginas/albuns.html">
+                            <img src="img/melhores-todos2.jpg" alt="Álbuns"
+                                class="w-full h-full object-cover opacity-80 hover:scale-105 transition duration-500">
+                            <div
+                                class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/90 to-transparent text-center">
+                                <span class="font-bold text-white text-lg tracking-wide uppercase">Álbuns
+                                    Lendários</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide relative aspect-video bg-gray-800">
+                        <!-- Corrigido o erro de digitação do .html aqui -->
+                        <a href="paginas/instrumentos.html">
+                            <img src="img/instrumentos.jpg" alt="Instrumentos"
+                                class="w-full h-full object-cover opacity-80 hover:scale-105 transition duration-500">
+                            <div
+                                class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/90 to-transparent text-center">
+                                <span class="font-bold text-white text-lg tracking-wide uppercase">Guia de
+                                    Instrumentos</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-
-                <!-- Navigação do swiper -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <!-- Controles do Swiper -->
+                <div class="swiper-button-next text-white hover:opacity-70"></div>
+                <div class="swiper-button-prev text-white hover:opacity-70"></div>
                 <div class="swiper-pagination"></div>
             </div>
         </section>
-        <!-- fim Swiper Destaques -->
+
+        <!-- Grid de Cards Estilo Feed do YouTube -->
+        <section class="my-10">
+            <h3 class="text-2xl font-bold mb-6">Recomendados para você</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
+                        <img src="img/artistas.jpg" alt="Artistas"
+                            class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                    </div>
+                    <div class="flex gap-3 px-1">
+                        <div
+                            class="w-9 h-9 rounded-full bg-youtubeRed flex items-center justify-center text-white font-bold shrink-0">
+                            M</div>
+                        <div>
+                            <h4
+                                class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                Conheça os bastidores dos maiores artistas da atualidade</h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">
+                                Musaico Oficial • 12k visualizações</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
+                        <img src="img/albuns.jpg" alt="Álbuns"
+                            class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                    </div>
+                    <div class="flex gap-3 px-1">
+                        <div
+                            class="w-9 h-9 rounded-full bg-gray-500 flex items-center justify-center text-white font-bold shrink-0">
+                            A</div>
+                        <div>
+                            <h4
+                                class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                Análise completa: Os lançamentos de álbuns imperdíveis deste mês</h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">Review
+                                de Discos • 45k visualizações</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
+                        <img src="img/instrumentos.jpg" alt="Instrumentos"
+                            class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                    </div>
+                    <div class="flex gap-3 px-1">
+                        <div
+                            class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold shrink-0">
+                            I</div>
+                        <div>
+                            <h4
+                                class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                Como escolher seu primeiro instrumento musical sem errar no orçamento</h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">
+                                Luthier Blog • 8k visualizações</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
-
-        <!--site-->
-
-        <h1>bem vindo</h1>
-<div class="hover-card p-4 bg-youtubeLightCard dark:bg-youtubeCard rounded-lg shadow-md">
-    Hover sobre mim!
-</div>
-        <div class="fade-in p-4 bg-youtubeLightCard dark:bg-youtubeCard rounded-lg shadow-md">Card 1</div>
-<div class="fade-in p-4 bg-youtubeLightCard dark:bg-youtubeCard rounded-lg shadow-md">Card 2</div>
-<div class="fade-in p-4 bg-youtubeLightCard dark:bg-youtubeCard rounded-lg shadow-md">Card 3</div>
-<!--cards-->
-        <div
-            class="bg-youtubeLightCard dark:bg-youtubeCard p-4 rounded-xl shadow-md hover:bg-youtubeHover dark:hover:bg-[#3f3f3f] transition-colors duration-300">
-            <h3 class="text-youtubeLightText dark:text-youtubeText font-bold mb-2">Título do card</h3>
-            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm">
-                Breve descrição do conteúdo
+        <div class="space-y-4 text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm leading-relaxed">
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci corrupti a sit doloremque, rem,
+                ratione delectus saepe libero id aut eveniet ad esse magni perferendis iure nisi deserunt earum
+                inventore?
             </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
             <div
-                class="bg-youtubeLightCard dark:bg-youtubeCard p-4 rounded-xl shadow-md hover:bg-youtubeHover dark:hover:bg-[#3f3f3f] transition-colors duration-300">
-                <img src="img/artistas.jpg" alt="Artistas" class="rounded-lg mb-3 w-full h-48 object-cover">
-                <h3 class="text-youtubeLightText dark:text-youtubeText font-bold mb-1">Artistas</h3>
-                <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm">Conheça os melhores
-                    artistas.</p>
-            </div>
-
-            <div
-                class="bg-youtubeLightCard dark:bg-youtubeCard p-4 rounded-xl shadow-md hover:bg-youtubeHover dark:hover:bg-[#3f3f3f] transition-colors duration-300">
-                <img src="img/albuns.jpg" alt="Álbuns" class="rounded-lg mb-3 w-full h-48 object-cover">
-                <h3 class="text-youtubeLightText dark:text-youtubeText font-bold mb-1">Álbuns</h3>
-                <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm">Confira os lançamentos
-                    mais recentes.</p>
-            </div>
-
-            <div
-                class="bg-youtubeLightCard dark:bg-youtubeCard p-4 rounded-xl shadow-md hover:bg-youtubeHover dark:hover:bg-[#3f3f3f] transition-colors duration-300">
-                <img src="img/instrumentos.jpg" alt="Instrumentos" class="rounded-lg mb-3 w-full h-48 object-cover">
-                <h3 class="text-youtubeLightText dark:text-youtubeText font-bold mb-1">Instrumentos</h3>
-                <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm">Saiba mais sobre cada
-                    instrumento.</p>
+                class="border-l-4 border-youtubeRed bg-gray-100 dark:bg-youtubeCard p-4 rounded-r-xl italic my-4 text-youtubeLightText dark:text-youtubeText">
+                "A música é o vínculo que une a vida do espírito à vida dos sentidos."
+                <span
+                    class="block text-xs text-youtubeLightTextSecondary dark:text-youtubeTextSecondary mt-1 font-sans not-italic">—
+                    Ludwig van Beethoven</span>
             </div>
         </div>
-        <!--tabela-->
-        <table>
-            <caption>tudo ta bom?</caption>
-            <tr>
-                <th>não</th>
-                <th>sim</th>
-                <th>não</th>
-                <th>sim</th>
-                <th>não</th>
-                <th>sim</th>
-            </tr>
-            <tr>
-                <th>não</th>
-                <th>sim</th>
-                <th>não</th>
-                <th>sim</th>
-                <th>não</th>
-                <th>sim</th>
-
-            </tr>
-            <tr>
-                <th>não</th>
-                <th>sim</th>
-                <th>não</th>
-                <th>sim</th>
-                <th>não</th>
-                <th>sim</th>
-
-            </tr>
-            <tr>
-                <th>talvez</th>
-                <th>talvez</th>
-                <th>talvez</th>
-                <th>talvez</th>
-            </tr>
-        </table class="bg-gray-200 dark:bg-gray-800">
-
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci corrupti a sit doloremque, rem, ratione
-            delectus saepe libero id aut eveniet ad esse magni perferendis iure nisi deserunt earum inventore?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque vitae ab placeat voluptate sed ducimus
-            deserunt ipsam laboriosam necessitatibus saepe sit molestias dolorem suscipit non id quia, exercitationem
-            accusamus quidem?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perferendis nisi harum eligendi. Libero
-            beatae cum mollitia velit error magni quibusdam rerum? Eveniet ut dolores perferendis. Commodi distinctio a
-            molestias!
-        </p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, iure tempore quam dolores ducimus aliquam at
-            numquam voluptate laudantium. Porro dolore ad rem quisquam laboriosam harum hic nemo corporis mollitia?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, magni debitis. Et repudiandae, facilis
-            numquam exercitationem voluptatem quis ad molestiae sed quod aperiam recusandae architecto voluptate officia
-            dolorum unde alias.
-        </p>
-        <!--fum da  tabela-->
-        <br>
-        <q class="red">pipoquinha rainha da putaria</q>
-        <!--ex citação-->
-        <br>
-        <a>-pipoquinha</a>
-        <button>
-            pipoca
-        </button>
+        </section>
     </main>
 
-    <!--fim do site-->
-
-    <!--rodapé/footer-->
-
-    <footer class="font-bold text-white bg-black/50 p-4 rounded text-center">
-        <a href="#topo">voltar para o topo</a>
+    <!-- Footer Padrão Profissional -->
+    <footer class="bg-white dark:bg-youtubeSidebar border-t border-gray-200 dark:border-gray-800 text-sm mt-auto">
+        <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-black text-youtubeRed mb-3">Musaico</h3>
+                <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary">
+                    Seu portal definitivo sobre o universo musical. Fique por dentro de novidades sobre instrumentos,
+                    lançamentos de álbuns e história da arte.
+                </p>
+            </div>
+            <div>
+                <h3 class="font-bold mb-3">Links Rápidos</h3>
+                <ul class="space-y-2 text-youtubeLightTextSecondary dark:text-youtubeTextSecondary">
+                    <li><a href="index.html" class="hover:text-youtubeRed transition">Página Inicial</a></li>
+                    <li><a href="paginas/artistas.html" class="hover:text-youtubeRed transition">Artistas</a></li>
+                    <li><a href="paginas/albuns.html" class="hover:text-youtubeRed transition">Álbuns</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold mb-3">Siga-nos</h3>
+                    <div class="flex space-x-4 text-xl text-youtubeLightTextSecondary dark:text-youtubeTextSecondary">
+                        <a href="#" class="hover:text-youtubeRed transition"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="hover:text-youtubeRed transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-youtubeRed transition"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="#topo"
+                        class="inline-flex items-center gap-2 bg-youtubeRed hover:bg-red-700 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition shadow-sm">
+                        <i class="fas fa-arrow-up"></i> Voltar ao Topo
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="border-t border-gray-200 dark:border-gray-800 py-4 text-center text-xs text-youtubeLightTextSecondary dark:text-youtubeTextSecondary">
+            © 2026 Musaico | Todos os direitos reservados.
+        </div>
     </footer>
 
-    <footer class="font-bold text-white bg-black/50 p-4 rounded p-6 mt-10 text-center">
-        © 2026 Musaico | GitHub | Contato
-    </footer>
-
-    <!--fim do rodapé/footer-->
-
-    <!-- Scripts javascript -->
-
+    <!-- Configuração do JSON de Temas do Tailwind -->
     <script>
         tailwind.config = {
-            darkMode: 'class', // ativa dark mode via classe
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
                         youtubeBg: '#0f0f0f',
-                        youtubeSidebar: '#181818',
-                        youtubeCard: '#272727',
-                        youtubeText: '#ffffff',
+                        youtubeSidebar: '#0f0f0f',
+                        youtubeCard: '#1f1f1f',
+                        youtubeText: '#f1f1f1',
                         youtubeTextSecondary: '#aaaaaa',
                         youtubeRed: '#ff0033',
-                        youtubeHover: '#3f3f3f',
+                        youtubeHover: '#272727',
                         youtubeLightBg: '#f9f9f9',
                         youtubeLightSidebar: '#ffffff',
-                        youtubeLightCard: '#e5e5e5',
-                        youtubeLightText: '#111111',
-                        youtubeLightTextSecondary: '#555555',
+                        youtubeLightCard: '#ffffff',
+                        youtubeLightText: '#0f0f0f',
+                        youtubeLightTextSecondary: '#606060',
+                    },
+                    scale: {
+                        '102': '1.02',
                     }
                 }
             }
         };
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class'
-        };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <!-- Scripts de Bibliotecas Externas -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="js/darkmode.js"></script>
+
+    <!-- Script de inicialização dos efeitos e do Botão Toggle de Hamburguer da Sidebar -->
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById('menuBtn');
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+
+            if (menuBtn && sidebar && mainContent) {
+                menuBtn.addEventListener('click', () => {
+                    // Se estiver em telas de computador (Desktop)
+                    if (window.innerWidth >= 768) {
+                        if (sidebar.classList.contains('md:block')) {
+                            sidebar.classList.remove('md:block');
+                            sidebar.classList.add('md:hidden');
+                            mainContent.classList.remove('md:ml-64'); // Retrai o espaço da barra
+                        } else {
+                            sidebar.classList.remove('md:hidden');
+                            sidebar.classList.add('md:block');
+                            mainContent.classList.add('md:ml-64'); // Expande de volta o espaço
+                        }
+                    } else {
+                        // Se estiver em telas de celular (Mobile)
+                        if (sidebar.classList.contains('hidden')) {
+                            sidebar.classList.remove('hidden');
+                            sidebar.classList.add('block');
+                        } else {
+                            sidebar.classList.remove('block');
+                            sidebar.classList.add('hidden');
+                        }
+                    }
+                });
+            }
+        });
+
+        // Inicialização do Swiper Carousel
         const swiper = new Swiper('.mySwiper', {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 24,
             loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true
@@ -343,18 +355,25 @@
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev'
             },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2
+                },
+                1024: {
+                    slidesPerView: 3
+                }
+            }
         });
 
-        gsap.from(".swiper-slide", {
+        // Animação GSAP suave na entrada
+        gsap.from(".group, .swiper-slide", {
             opacity: 0,
-            y: 50,
-            duration: 1,
-            stagger: 0.3
+            y: 30,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out"
         });
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- fim dos Scripts javascript -->
-
 </body>
 
 </html>

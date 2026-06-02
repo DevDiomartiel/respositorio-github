@@ -1,3 +1,7 @@
+// no momento esta sendo executado pelo darkmode.js
+
+
+
 // Inicializa o Swiper
 const swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,

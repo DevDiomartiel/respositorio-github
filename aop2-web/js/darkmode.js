@@ -1,4 +1,4 @@
-const btn = document.getElementById("darkModeBtn");
+const btn = document.getElementById("darkModeBtn"); // darkmode
 
 // Aplica tema salvo ao carregar
 if(localStorage.getItem("theme") === "dark"){
@@ -14,6 +14,8 @@ btn.addEventListener("click", () => {
         localStorage.setItem("theme", "light");
     }
 });
+
+//ia colocar esses codigos em outras partes mas fiquei sem tempo, depois eu arrumo
 
 document.getElementById("darkModeBtn")
 
