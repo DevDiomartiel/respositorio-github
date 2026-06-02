@@ -7,34 +7,30 @@
     <meta name="author" content="Dio">
     <meta name="description" content="Musaico - Seu blog pessoal de música">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Swiper.js CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-    <!-- Font Awesome Icones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-   <!-- css-->
     <link rel="stylesheet" href="css/style.css">
 
     <title>Musaico</title>
 </head>
 
-<body
+
+<!-- NAO TIVE TEMPO ENT MUITAS FUNCIONALIDADES SÃO ILUSTRATIVAS AINDA.-->
+
+
+<body id="topo"
     class="bg-youtubeLightBg dark:bg-youtubeBg text-youtubeLightText dark:text-youtubeText font-['Poppins'] transition-colors duration-300 min-h-screen flex flex-col">
 
-    <!-- Header (Estilo YouTube Premium) -->
     <header
         class="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm z-50 px-6 py-3 flex justify-between items-center">
         <div class="flex items-center gap-3">
-            <!-- Botão de Menu com o ID correto e visível em todas as telas -->
             <i id="menuBtn" class="fas fa-bars text-xl cursor-pointer hover:opacity-70"></i>
             <h1 class="text-2xl font-black tracking-tighter text-youtubeRed flex items-center gap-2">
                 <i class="fas fa-mosaic"></i>musaico
@@ -49,9 +45,12 @@
         </div>
     </header>
 
-    <!-- Sidebar Lateral Fixa (Estilo Clássico do YouTube) com ID para o JS -->
+<!--tentei mt concertar mas n consegui      -->
+
+
     <aside id="sidebar"
-        class="fixed top-[60px] left-0 w-64 h-[calc(60vh-60px)] bg-white dark:bg-youtubeSidebar border-r border-gray-200 dark:border-gray-800 p-4 hidden md:block overflow-y-auto transition-all duration-300 z-40">
+        class="fixed top-[60px] left-0 w-64 h-[calc(50vh-60px)] bg-white dark:bg-youtubeSidebar border-r border-gray-200 dark:border-gray-800 p-4 overflow-y-auto transition-transform duration-300 z-40 -translate-x-full md:translate-x-0">
+
         <nav class="flex flex-col space-y-1">
             <a href="index.html"
                 class="flex items-center gap-4 px-4 py-3 rounded-xl bg-gray-100 dark:bg-youtubeHover text-youtubeRed font-semibold">
@@ -81,156 +80,241 @@
         </nav>
     </aside>
 
-    <!-- Conteúdo Principal com ID e Margem responsiva inicial alinhada à Sidebar -->
     <main id="mainContent"
         class="flex-1 md:ml-64 pt-[100px] px-6 pb-12 max-w-7xl mx-auto w-full transition-all duration-300">
 
-        <!-- Banner de Destaque -->
-        <section id="topo"
-            class="relative my-6 h-60 md:h-80 flex items-center justify-start bg-[url('img/destaque1.jpg')] bg-cover bg-center rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800">
-            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-            <div class="relative z-10 p-8 md:p-12 max-w-xl">
-                <h2 class="text-3xl md:text-5xl font-black text-white leading-tight mb-2">Explore o universo da música
-                </h2>
-                <p class="text-gray-200 hidden sm:block text-sm md:text-base">Descubra novos ritmos, álbuns históricos e
-                    os segredos por trás dos instrumentos mais famosos do mundo.</p>
-            </div>
-        </section>
-
-        <!-- Seção Swiper Carousel (Estilo Feed do Twitter/Cards Grandes) -->
-        <section class="my-10">
+        <section class="my-6">
             <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
                 <i class="fas fa-fire text-youtubeRed"></i> Em Alta
             </h3>
-            <div class="swiper mySwiper overflow-hidden rounded-2xl">
+            <div class="swiper mySwiper overflow-hidden rounded-2xl p-1">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide relative aspect-video bg-gray-800">
+                    <div class="swiper-slide relative aspect-video bg-gray-800 rounded-xl overflow-hidden">
                         <a href="paginas/artistas.html">
                             <img src="img/artistas.jpg" alt="Artistas"
                                 class="w-full h-full object-cover opacity-80 hover:scale-105 transition duration-500">
-                            <div
-                                class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/90 to-transparent text-center">
-                                <span class="font-bold text-white text-lg tracking-wide uppercase">Artistas de
-                                    Sucesso</span>
+                            <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/90 to-transparent text-center">
+                                <span class="font-bold text-white text-lg tracking-wide uppercase">Artistas de Sucesso</span>
                             </div>
                         </a>
                     </div>
-                    <div class="swiper-slide relative aspect-video bg-gray-800">
+                    <div class="swiper-slide relative aspect-video bg-gray-800 rounded-xl overflow-hidden">
                         <a href="paginas/albuns.html">
                             <img src="img/melhores-todos2.jpg" alt="Álbuns"
                                 class="w-full h-full object-cover opacity-80 hover:scale-105 transition duration-500">
-                            <div
-                                class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/90 to-transparent text-center">
-                                <span class="font-bold text-white text-lg tracking-wide uppercase">Álbuns
-                                    Lendários</span>
+                            <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/90 to-transparent text-center">
+                                <span class="font-bold text-white text-lg tracking-wide uppercase">Álbuns Lendários</span>
                             </div>
                         </a>
                     </div>
-                    <div class="swiper-slide relative aspect-video bg-gray-800">
-                        <!-- Corrigido o erro de digitação do .html aqui -->
+                    <div class="swiper-slide relative aspect-video bg-gray-800 rounded-xl overflow-hidden">
                         <a href="paginas/instrumentos.html">
                             <img src="img/instrumentos.jpg" alt="Instrumentos"
                                 class="w-full h-full object-cover opacity-80 hover:scale-105 transition duration-500">
-                            <div
-                                class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/90 to-transparent text-center">
-                                <span class="font-bold text-white text-lg tracking-wide uppercase">Guia de
-                                    Instrumentos</span>
+                            <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/90 to-transparent text-center">
+                                <span class="font-bold text-white text-lg tracking-wide uppercase">Guia de Instrumentos</span>
                             </div>
                         </a>
                     </div>
                 </div>
-                <!-- Controles do Swiper -->
                 <div class="swiper-button-next text-white hover:opacity-70"></div>
                 <div class="swiper-button-prev text-white hover:opacity-70"></div>
                 <div class="swiper-pagination"></div>
             </div>
         </section>
 
-        <!-- Grid de Cards Estilo Feed do YouTube -->
-        <section class="my-10">
-            <h3 class="text-2xl font-bold mb-6">Recomendados para você</h3>
+        <section class="my-12">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <i class="fas fa-thumbs-up text-youtubeRed"></i> Recomendados para você
+            </h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card 1 -->
+                
                 <div class="group cursor-pointer">
                     <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
-                        <img src="img/artistas.jpg" alt="Artistas"
-                            class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                        <img src="img/artistas.jpg" alt="Artistas" class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
                     </div>
                     <div class="flex gap-3 px-1">
-                        <div
-                            class="w-9 h-9 rounded-full bg-youtubeRed flex items-center justify-center text-white font-bold shrink-0">
-                            M</div>
+                        <div class="w-9 h-9 rounded-full bg-youtubeRed flex items-center justify-center text-white font-bold shrink-0">M</div>
                         <div>
-                            <h4
-                                class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
-                                Conheça os bastidores dos maiores artistas da atualidade</h4>
-                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">
-                                Musaico Oficial • 12k visualizações</p>
+                            <h4 class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                Conheça os bastidores dos maiores artistas da atualidade
+                            </h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">Musaico Oficial</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="group cursor-pointer">
                     <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
-                        <img src="img/albuns.jpg" alt="Álbuns"
-                            class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                        <img src="img/albuns.jpg" alt="Álbuns" class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
                     </div>
                     <div class="flex gap-3 px-1">
-                        <div
-                            class="w-9 h-9 rounded-full bg-gray-500 flex items-center justify-center text-white font-bold shrink-0">
-                            A</div>
+                        <div class="w-9 h-9 rounded-full bg-gray-500 flex items-center justify-center text-white font-bold shrink-0">A</div>
                         <div>
-                            <h4
-                                class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
-                                Análise completa: Os lançamentos de álbuns imperdíveis deste mês</h4>
-                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">Review
-                                de Discos • 45k visualizações</p>
+                            <h4 class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                Análise completa: Os lançamentos de álbuns imperdíveis deste mês
+                            </h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">Review de Discos</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="group cursor-pointer">
                     <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
-                        <img src="img/instrumentos.jpg" alt="Instrumentos"
-                            class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                        <img src="img/instrumentos.jpg" alt="Instrumentos" class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
                     </div>
                     <div class="flex gap-3 px-1">
-                        <div
-                            class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold shrink-0">
-                            I</div>
+                        <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold shrink-0">I</div>
                         <div>
-                            <h4
-                                class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
-                                Como escolher seu primeiro instrumento musical sem errar no orçamento</h4>
-                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">
-                                Luthier Blog • 8k visualizações</p>
+                            <h4 class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                Como escolher seu primeiro instrumento musical sem errar no orçamento
+                            </h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">Luthier Blog</p>
                         </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="my-12">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <i class="fas fa-newspaper text-youtubeRed"></i> Últimas Notícias
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
+                        <div class="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded font-semibold z-10">Novidade</div>
+                        <img src="img/artistas.jpg" alt="Festivais" class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                    </div>
+                    <div class="flex gap-3 px-1">
+                        <div class="w-9 h-9 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold shrink-0">F</div>
+                        <div>
+                            <h4 class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                Festivais de Verão 2026: Confira as principais bandas e line-ups confirmados
+                            </h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">Radar Festivais • 2 horas atrás</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
+                        <img src="img/melhores-todos2.jpg" alt="Streaming" class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                    </div>
+                    <div class="flex gap-3 px-1">
+                        <div class="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-white font-bold shrink-0">T</div>
+                        <div>
+                            <h4 class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                O impacto das plataformas de streaming na remuneração de músicos independentes
+                            </h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">Tech Music • Ontem</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
+                        <img src="img/albuns.jpg" alt="Metal" class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                    </div>
+                    <div class="flex gap-3 px-1">
+                        <div class="w-9 h-9 rounded-full bg-black flex items-center justify-center text-white font-bold shrink-0">N</div>
+                        <div>
+                            <h4 class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                Ne Obliviscaris anuncia novas datas de turnê global com apresentações conceituais
+                            </h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">Extremo Metal • 3 dias atrás</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="my-12">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <i class="fas fa-graduation-cap text-youtubeRed"></i> Conhecimento e Equipamentos
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
+                        <img src="img/instrumentos.jpg" alt="Guitarras" class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                    </div>
+                    <div class="flex gap-3 px-1">
+                        <div class="w-9 h-9 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold shrink-0">G</div>
+                        <div>
+                            <h4 class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                Madeiras de ressonância: Como o mogno e o marfim influenciam o timbre da sua guitarra
+                            </h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">Central do Luthier</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
+                        <img src="img/artistas.jpg" alt="Teoria" class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                    </div>
+                    <div class="flex gap-3 px-1">
+                        <div class="w-9 h-9 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold shrink-0">E</div>
+                        <div>
+                            <h4 class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                Desmistificando os Modos Gregos: Como usá-los para criar solos expressivos e marcantes
+                            </h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">Estúdio Teoria</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl bg-gray-200 dark:bg-youtubeCard aspect-video mb-3 relative">
+                        <img src="img/albuns.jpg" alt="Estúdio" class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                    </div>
+                    <div class="flex gap-3 px-1">
+                        <div class="w-9 h-9 rounded-full bg-red-500 flex items-center justify-center text-white font-bold shrink-0">H</div>
+                        <div>
+                            <h4 class="text-youtubeLightText dark:text-youtubeText font-bold leading-snug line-clamp-2 group-hover:text-youtubeRed transition-colors">
+                                Guia de Isolamento Acústico: Montando um Home Studio funcional gastando pouco
+                            </h4>
+                            <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm mt-1">Áudio Prático</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="my-14 border-t border-gray-200 dark:border-gray-800 pt-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div class="lg:col-span-2 space-y-4">
+                    <h4 class="text-xl font-bold text-youtubeLightText dark:text-youtubeText">Por que criamos o Musaico?</h4>
+                    <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm leading-relaxed">
+                        O Musaico é um blog inteiramente dedicado a explorar as infinitas nuances do universo da música. 
+                        Acreditamos que a música não é apenas uma combinação matemática de frequências sonoras, mas sim uma 
+                        colcha de retalhos histórica e cultural. Cada melodia carrega consigo a bagagem de um artista, a evolução 
+                        de engenharia de um instrumento e o reflexo de sua própria época. <!-- texto generico I.A-->
+                    </p>
+                    <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm leading-relaxed">
+                        Nossa missão é aproximar ouvintes casuais, estudantes dedicados e músicos experientes através de artigos ricos, 
+                        análises minuciosas de álbuns históricos, guias práticos sobre teoria e luthieria, e notícias fresquinhas sobre 
+                        as vertentes clássicas e modernas que movem o mundo.
+                    </p>
+                </div>
+                <div class="lg:col-span-1">
+                    <div class="border-l-4 border-youtubeRed bg-gray-100 dark:bg-youtubeCard p-5 rounded-r-xl italic text-youtubeLightText dark:text-youtubeText">
+                        "A música é o vínculo que une a vida do espírito à vida dos sentidos. Uma revelação mais alta que toda sabedoria e filosofia."
+                        <span class="block text-xs text-youtubeLightTextSecondary dark:text-youtubeTextSecondary mt-2 font-sans not-italic font-semibold">
+                            — Ludwig van Beethoven <!--gosto mt dessa frase, ia colocar outra "quem tem musica jamais padecera de solidao -->
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <div class="space-y-4 text-youtubeLightTextSecondary dark:text-youtubeTextSecondary text-sm leading-relaxed">
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci corrupti a sit doloremque, rem,
-                ratione delectus saepe libero id aut eveniet ad esse magni perferendis iure nisi deserunt earum
-                inventore?
-            </p>
-            <div
-                class="border-l-4 border-youtubeRed bg-gray-100 dark:bg-youtubeCard p-4 rounded-r-xl italic my-4 text-youtubeLightText dark:text-youtubeText">
-                "A música é o vínculo que une a vida do espírito à vida dos sentidos."
-                <span
-                    class="block text-xs text-youtubeLightTextSecondary dark:text-youtubeTextSecondary mt-1 font-sans not-italic">—
-                    Ludwig van Beethoven</span>
-            </div>
-        </div>
-        </section>
     </main>
 
-    <!-- Footer Padrão Profissional -->
     <footer class="bg-white dark:bg-youtubeSidebar border-t border-gray-200 dark:border-gray-800 text-sm mt-auto">
         <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -265,13 +349,11 @@
                 </div>
             </div>
         </div>
-        <div
-            class="border-t border-gray-200 dark:border-gray-800 py-4 text-center text-xs text-youtubeLightTextSecondary dark:text-youtubeTextSecondary">
+        <div class="border-t border-gray-200 dark:border-gray-800 py-4 text-center text-xs text-youtubeLightTextSecondary dark:text-youtubeTextSecondary">
             © 2026 Musaico | Todos os direitos reservados.
         </div>
     </footer>
 
-    <!-- Configuração do JSON de Temas do Tailwind -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -299,46 +381,41 @@
         };
     </script>
 
-    <!-- Scripts de Bibliotecas Externas -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="js/darkmode.js"></script>
 
-    <!-- Script de inicialização dos efeitos e do Botão Toggle de Hamburguer da Sidebar -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const menuBtn = document.getElementById('menuBtn');
             const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('mainContent');
 
+            function initLayout() {
+                if (window.innerWidth >= 768) {
+                    sidebar.classList.remove('-translate-x-full');
+                    mainContent.classList.add('md:ml-64');
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                    mainContent.classList.remove('md:ml-64');
+                }
+            }
+            
+            initLayout();
+
             if (menuBtn && sidebar && mainContent) {
                 menuBtn.addEventListener('click', () => {
-                    // Se estiver em telas de computador (Desktop)
+                    sidebar.classList.toggle('-translate-x-full');
                     if (window.innerWidth >= 768) {
-                        if (sidebar.classList.contains('md:block')) {
-                            sidebar.classList.remove('md:block');
-                            sidebar.classList.add('md:hidden');
-                            mainContent.classList.remove('md:ml-64'); // Retrai o espaço da barra
-                        } else {
-                            sidebar.classList.remove('md:hidden');
-                            sidebar.classList.add('md:block');
-                            mainContent.classList.add('md:ml-64'); // Expande de volta o espaço
-                        }
-                    } else {
-                        // Se estiver em telas de celular (Mobile)
-                        if (sidebar.classList.contains('hidden')) {
-                            sidebar.classList.remove('hidden');
-                            sidebar.classList.add('block');
-                        } else {
-                            sidebar.classList.remove('block');
-                            sidebar.classList.add('hidden');
-                        }
+                        mainContent.classList.toggle('md:ml-64');
                     }
                 });
             }
+
+            window.addEventListener('resize', initLayout);
         });
 
-        // Inicialização do Swiper Carousel
+        // Carousel Swiper
         const swiper = new Swiper('.mySwiper', {
             slidesPerView: 1,
             spaceBetween: 24,
@@ -356,21 +433,17 @@
                 prevEl: '.swiper-button-prev'
             },
             breakpoints: {
-                640: {
-                    slidesPerView: 2
-                },
-                1024: {
-                    slidesPerView: 3
-                }
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
             }
         });
 
-        // Animação GSAP suave na entrada
+        // GSAP Elements Stagger Animation
         gsap.from(".group, .swiper-slide", {
             opacity: 0,
             y: 30,
             duration: 0.8,
-            stagger: 0.1,
+            stagger: 0.08,
             ease: "power2.out"
         });
     </script>

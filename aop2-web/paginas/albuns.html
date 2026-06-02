@@ -5,22 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!--     fonte  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <!--    css     -->
     <link rel="stylesheet" href="../css/style.css">
     <title>Artistas - Musaico</title>
 </head>
 
 <body
-    class="bg-youtubeLightBg dark:bg-youtubeBg text-youtubeLightText dark:text-youtubeText font-['Poppins'] min-h-screen flex flex-col">
+    class="bg-youtubeLightBg dark:bg-youtubeBg text-youtubeLightText dark:text-youtubeText font-sans min-h-screen flex flex-col">
 
-    <!-- Header -->
     <header
         class="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm z-50 px-6 py-3 flex justify-between items-center">
         <div class="flex items-center gap-3">
@@ -28,7 +27,7 @@
                 class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors flex items-center justify-center">
                 <i class="fas fa-bars text-xl pointer-events-none"></i>
             </button>
-            <h1 class="text-2xl font-black tracking-tighter text-youtubeRed flex items-center gap-2">
+            <h1 class="text-xl font-bold tracking-tight text-youtubeRed flex items-center gap-2">
                 <i class="fas fa-mosaic"></i>musaico
             </h1>
         </div>
@@ -36,7 +35,6 @@
             class="p-2.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-lg">🌙</button>
     </header>
 
-    <!-- Sidebar -->
     <aside id="sidebar"
         class="fixed top-[60px] left-0 w-64 h-[calc(100vh-60px)] bg-white dark:bg-youtubeSidebar border-r border-gray-200 dark:border-gray-800 p-4 hidden md:block overflow-y-auto transition-all duration-300 z-40">
         <nav class="flex flex-col space-y-1">
@@ -45,11 +43,11 @@
                 <i class="fas fa-house text-lg"></i> Home
             </a>
             <a href="artistas.html"
-                class="flex items-center gap-4 px-4 py-3 rounded-xl bg-gray-100 dark:bg-youtubeHover text-youtubeRed font-semibold">
+                class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-youtubeHover transition-colors">
                 <i class="fas fa-user text-lg"></i> Artistas
             </a>
             <a href="albuns.html"
-                class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-youtubeHover transition-colors">
+                class="flex items-center gap-4 px-4 py-3 rounded-xl bg-gray-100 dark:bg-youtubeHover text-youtubeRed font-semibold">
                 <i class="fas fa-compact-disc text-lg"></i> Álbuns
             </a>
             <a href="instrumentos.html"
@@ -67,15 +65,14 @@
             </a>
         </nav>
     </aside>
-    <!-- Mantenha o Header e a Sidebar idênticos ao arquivo de cima. Altere apenas o <main> -->
+
     <main id="mainContent"
         class="flex-1 md:ml-64 pt-[100px] px-6 pb-12 max-w-7xl mx-auto w-full transition-all duration-300">
-        <h2 class="text-3xl font-black mb-2">Álbuns Lendários</h2>
-        <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary mb-8">Discos que definiram épocas e
-            mudaram a história da música.</p>
+        <h2 class="text-2xl font-bold tracking-tight mb-1">Álbuns Lendários</h2>
+        <p class="text-youtubeLightTextSecondary dark:text-youtubeTextSecondary mb-8 text-sm">Discos que definiram
+            épocas e mudaram a história da música.</p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Card de Álbum -->
             <div
                 class="bg-white dark:bg-youtubeCard rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 group shadow-sm">
                 <div class="aspect-square bg-gray-300 overflow-hidden">
@@ -83,31 +80,32 @@
                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                 </div>
                 <div class="p-4">
-                    <h3 class="font-bold text-lg line-clamp-1">Abbey Road</h3>
-                    <p class="text-youtubeRed font-semibold text-sm mt-1">The Beatles</p>
+                    <h3 class="font-semibold text-base line-clamp-1">Abbey Road</h3>
+                    <p class="text-youtubeRed font-semibold text-sm mt-0.5">The Beatles</p>
                     <p class="text-xs text-youtubeLightTextSecondary dark:text-youtubeTextSecondary mt-2">Lançamento:
                         1969 • 17 Faixas</p>
                 </div>
             </div>
-            <!-- Adicione mais cards mudando os dados -->
+
         </div>
     </main>
-    <!-- Mantenha o Footer e o Script idênticos ao arquivo de cima (ajuste apenas o link ativo na sidebar) -->
 
-    <!-- Footer (Simples para páginas internas) -->
+
     <footer
         class="bg-white dark:bg-youtubeSidebar border-t border-gray-200 dark:border-gray-800 py-6 text-center text-xs text-youtubeLightTextSecondary dark:text-youtubeTextSecondary mt-auto">
         © 2026 Musaico | Todos os direitos reservados.
     </footer>
 
-    <!-- Scripts Compartilhados -->
     <script src="../js/darkmode.js"></script>
     <script>
-        // Sc ript daSidebar 
+        // Injetando a Poppins como fonte padrão do Tailwind
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Poppins"', 'sans-serif'],
+                    },
                     colors: {
                         youtubeBg: '#0f0f0f',
                         youtubeSidebar: '#0f0f0f',
@@ -123,6 +121,7 @@
                 }
             }
         };
+
         const menuBtn = document.getElementById('menuBtn');
         const sidebar = document.getElementById('sidebar');
         const mainContent = document.getElementById('mainContent');
